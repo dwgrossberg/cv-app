@@ -3,9 +3,6 @@ import "../styles/Footer.css";
 import gitHubIcon from "../assets/github.png";
 
 class Footer extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div className="Footer">

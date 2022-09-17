@@ -2,5 +2,37 @@
   grid-area: 2 / 1 / 3 / 2;
   width: 100%;
   height: 100%;
-  background-color: pink;
+  border: 1px solid dimgray;
+  border-radius: 7px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.GeneralInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.names {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#firstName,
+#lastName,
+#city,
+#email,
+#phone {
+  width: 100%;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }

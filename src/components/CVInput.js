@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GeneralInfo from "./GeneralInfo";
 import "../styles/CVInput.css";
 
 class CVInput extends Component {
@@ -6,7 +7,15 @@ class CVInput extends Component {
     super(props);
   }
   render() {
-    return <div className="CVInput"></div>;
+    return (
+      <div className="CVInput">
+        General Info:
+        <hr></hr>
+        <GeneralInfo />
+        Professional Experience:
+        <hr></hr>
+      </div>
+    );
   }
 }
 
