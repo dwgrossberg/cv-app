@@ -1,23 +1,22 @@
-import "./App.css";
+import React, { Component } from "react";
+import CVInput from "./components/CVInput";
+import CVOutput from "./components/CVOutput";
+import Header from "./components/Header";
+import "./styles/App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+  }
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <CVInput />
+        <CVOutput />
+      </div>
+    );
+  }
 }
 
 export default App;

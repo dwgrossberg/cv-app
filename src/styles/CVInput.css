@@ -1,0 +1,6 @@
+.CVInput {
+  grid-area: 2 / 1 / 3 / 2;
+  width: 40vw;
+  height: 500px;
+  background-color: pink;
+}
