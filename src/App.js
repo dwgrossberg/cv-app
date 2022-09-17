@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CVInput from "./components/CVInput";
 import CVOutput from "./components/CVOutput";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import "./styles/App.css";
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
         <Header />
         <CVInput />
         <CVOutput />
+        <Footer />
       </div>
     );
   }

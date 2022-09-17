@@ -1,0 +1,31 @@
+.Footer {
+  grid-area: 3 / 1 / 4 / 3;
+  height: 100%;
+}
+
+.made-by {
+  color: dimgray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  padding: 7px;
+  border-radius: 7px;
+  width: 100%;
+}
+.made-by a {
+  text-decoration: none;
+  color: dimgray;
+}
+.made-by img {
+  height: 16px;
+  transition: transform 0.3s ease-in-out;
+}
+.made-by #github-icon {
+  max-height: 16px;
+}
+.made-by img:hover {
+  transform: rotate(360deg) scale(1.2);
+}
