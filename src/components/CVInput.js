@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import GeneralInfo from "./GeneralInfo";
+import ProfessionalExp from "./ProfessionalExp";
+
 import "../styles/CVInput.css";
 
 class CVInput extends Component {
@@ -14,6 +16,7 @@ class CVInput extends Component {
         <GeneralInfo />
         Professional Experience:
         <hr></hr>
+        <ProfessionalExp />
       </div>
     );
   }

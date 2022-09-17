@@ -10,14 +10,22 @@
   gap: 10px;
 }
 
-.GeneralInfo {
+hr {
+  border-top: 0.5px dotted dimgray;
+}
+
+.GeneralInfo,
+.ProfessionalExp {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 10px;
 }
 
-.names {
+.names,
+.contact,
+.companyInfo,
+.expInfo {
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -27,12 +35,11 @@
 #lastName,
 #city,
 #email,
-#phone {
+#phone,
+#company,
+#position,
+#startDate,
+#endDate,
+#location {
   width: 100%;
-}
-
-.contact {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
 }
