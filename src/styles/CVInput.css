@@ -14,8 +14,10 @@ hr {
   border-top: 0.5px dotted dimgray;
 }
 
-.GeneralInfo,
-.ProfessionalExp {
+.GeneralInfoInput,
+.ProfessionalSummary,
+.WorkInput,
+.EducationInput {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -25,7 +27,9 @@ hr {
 .names,
 .contact,
 .companyInfo,
-.expInfo {
+.expInfo,
+.schoolInfo,
+.schoolToFrom {
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -38,8 +42,30 @@ hr {
 #phone,
 #company,
 #position,
-#startDate,
-#endDate,
-#location {
+#workStartDate,
+#workEndDate,
+#location,
+#university,
+#degree,
+#schoolStartDate,
+#schoolEndDate,
+#gpa {
   width: 100%;
+  padding: 3px 5px;
+}
+
+.buttons {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+#moreWork,
+#removeWork,
+#moreEdu,
+#removeEdu {
+  padding: 3px 5px;
 }

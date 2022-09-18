@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "../styles/CVInput.css";
 
-class GeneralInfo extends Component {
+class GeneralInfoInput extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
-      <div className="GeneralInfo">
+      <div className="GeneralInfoInput">
         <div className="names">
           <input type="text" id="firstName" value="firstName"></input>
           <input type="text" id="lastName" value="lastName"></input>
@@ -22,4 +22,4 @@ class GeneralInfo extends Component {
   }
 }
 
-export default GeneralInfo;
+export default GeneralInfoInput;
