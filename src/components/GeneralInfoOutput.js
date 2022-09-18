@@ -23,7 +23,6 @@ class GeneralInfoOutput extends Component {
           </div>
           <div className="contactWrapper">
             <p className="CVCity">city</p>
-
             <p className="CVEmail">email</p>
             <p className="CVPhone">phone</p>
           </div>

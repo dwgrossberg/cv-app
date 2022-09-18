@@ -4,7 +4,7 @@
 }
 
 .made-by {
-  color: dimgray;
+  color: #393d3f;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,7 +17,7 @@
 }
 .made-by a {
   text-decoration: none;
-  color: dimgray;
+  color: #393d3f;
 }
 .made-by img {
   height: 16px;

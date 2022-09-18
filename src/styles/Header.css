@@ -1,7 +1,7 @@
 .Header {
   grid-area: 1 / 1 / 2 / 3;
   height: 100%;
-  color: dimgray;
+  color: #393d3f;
   display: flex;
   align-items: center;
   justify-content: center;

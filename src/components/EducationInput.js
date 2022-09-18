@@ -19,7 +19,7 @@ class EducationInput extends Component {
             value="schoolStartDate"
           ></input>
           <input type="date" id="schoolEndDate" value="schoolEndDate"></input>
-          <input type="number" id="gpa" value="gpa"></input>
+          <input type="number" id="gpa" value="3.4"></input>
         </div>
       </div>
     );
