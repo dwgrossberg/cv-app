@@ -3,7 +3,7 @@ import GeneralInfoInput from "./GeneralInfoInput";
 import WorkInput from "./WorkInput";
 import "../styles/CVInput.css";
 import EducationInput from "./EducationInput";
-import ProfessionalSummary from "./ProfessionalSummary";
+import SummaryInput from "./SummaryInput";
 
 class CVInput extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class CVInput extends Component {
         <GeneralInfoInput />
         Professional Summary:
         <hr></hr>
-        <ProfessionalSummary />
+        <SummaryInput />
         Work Experience:
         <hr></hr>
         <WorkInput />

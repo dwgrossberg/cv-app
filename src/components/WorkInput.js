@@ -17,6 +17,9 @@ class WorkInput extends Component {
           <input type="date" id="workEndDate" value="endDate"></input>
           <input type="text" id="location" value="location"></input>
         </div>
+        <div className="workTasks">
+          <input type="text" id="workSummary" value="workSummary"></input>
+        </div>
       </div>
     );
   }
