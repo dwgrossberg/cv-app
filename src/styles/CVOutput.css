@@ -9,7 +9,10 @@
   height: 100%;
   border: 1px solid #157a6e;
   border-radius: 7px;
-  padding: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .GeneralInfoOutput {
@@ -63,4 +66,51 @@
 .CVLastName {
   font-size: 26px;
   text-transform: uppercase;
+}
+
+.summaryTitle {
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.summarySummary {
+  font-size: 13px;
+}
+
+.CVOutput hr {
+  border: none;
+  border-top: 2px solid #157a6e;
+}
+
+.WorkOutput {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.workExp {
+  color: #157a6e;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: -5px;
+}
+
+.workPosition,
+.workCompany {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.workDates {
+  display: flex;
+  gap: 10px;
+}
+
+.workTasks {
+  width: 100%;
+  font-size: 12px;
 }
