@@ -48,7 +48,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 90px;
   gap: 5px;
   color: ghostwhite;
   font-size: 14px;
@@ -89,7 +88,7 @@
   gap: 5px;
 }
 
-.workExp {
+.exp {
   color: #157a6e;
   font-size: 13px;
   text-transform: uppercase;
@@ -103,6 +102,10 @@
   gap: 10px;
   justify-content: space-between;
   font-size: 13px;
+}
+
+.position {
+  font-weight: 600;
 }
 
 .workDates {

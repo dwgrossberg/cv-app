@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import GeneralInfoOutput from "./GeneralInfoOutput";
 import SummaryOutput from "./SummaryOutput";
 import WorkOutput from "./WorkOutput";
+import EducationOutput from "./EducationOutput";
 import "../styles/CVOutput.css";
 
 class CVOutput extends Component {
@@ -14,9 +15,10 @@ class CVOutput extends Component {
         <GeneralInfoOutput />
         <SummaryOutput />
         <hr></hr>
-        <p className="workExp">Work Experience</p>
-
+        <p className="exp">Work Experience</p>
         <WorkOutput />
+        <div className="exp">Education</div>
+        <EducationOutput />
       </div>
     );
   }

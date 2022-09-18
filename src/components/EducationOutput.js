@@ -1,34 +1,29 @@
 import React, { Component } from "react";
 import "../styles/CVOutput.css";
 
-class WorkOutput extends Component {
+class EducationOutput extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
-      <div className="WorkOutput">
+      <div className="EducationOutput">
         <div>
           <div className="workPosition">
-            <p className="position">Position</p>
+            <p className="position">University</p>
             <div className="workDates">
               <p>DateFrom</p>
               <p>DateTo</p>
             </div>
           </div>
           <div className="workCompany">
-            <p>Company</p>
-            <p>Location</p>
+            <p>Degree</p>
+            <p>gpa</p>
           </div>
         </div>
-        <p className="workTasks">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident.
-        </p>
       </div>
     );
   }
 }
 
-export default WorkOutput;
+export default EducationOutput;
