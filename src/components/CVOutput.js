@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GeneralInfoOutput from "./GeneralInfoOutput";
 import "../styles/CVOutput.css";
 
 class CVOutput extends Component {
@@ -6,7 +7,11 @@ class CVOutput extends Component {
     super(props);
   }
   render() {
-    return <div className="CVOutput"></div>;
+    return (
+      <div className="CVOutput">
+        <GeneralInfoOutput />
+      </div>
+    );
   }
 }
 

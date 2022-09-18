@@ -1,8 +1,6 @@
 .App {
   height: 100%;
   width: 100%;
-  width: 100vw;
-  height: 100vh;
   min-width: 700px;
   gap: 20px;
   display: grid;
