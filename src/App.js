@@ -57,6 +57,54 @@ class App extends Component {
         });
         console.log(this.state.generalInfo);
         break;
+      case "lastName":
+        this.setState({
+          generalInfo: {
+            firstName: this.state.generalInfo.firstName,
+            lastName: input,
+            city: this.state.generalInfo.city,
+            email: this.state.generalInfo.email,
+            phone: this.state.generalInfo.phone,
+          },
+        });
+        console.log(this.state.generalInfo);
+        break;
+      case "city":
+        this.setState({
+          generalInfo: {
+            firstName: this.state.generalInfo.firstName,
+            lastName: this.state.generalInfo.lastName,
+            city: input,
+            email: this.state.generalInfo.email,
+            phone: this.state.generalInfo.phone,
+          },
+        });
+        console.log(this.state.generalInfo);
+        break;
+      case "email":
+        this.setState({
+          generalInfo: {
+            firstName: this.state.generalInfo.firstName,
+            lastName: this.state.generalInfo.lastName,
+            city: this.state.generalInfo.city,
+            email: input,
+            phone: this.state.generalInfo.phone,
+          },
+        });
+        console.log(this.state.generalInfo);
+        break;
+      case "phone":
+        this.setState({
+          generalInfo: {
+            firstName: this.state.generalInfo.firstName,
+            lastName: this.state.generalInfo.lastName,
+            city: this.state.generalInfo.city,
+            email: this.state.generalInfo.email,
+            phone: input,
+          },
+        });
+        console.log(this.state.generalInfo);
+        break;
       default:
         console.log(id);
     }
@@ -66,7 +114,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <CVInput inputGeneralInfo={this.inputGeneralInfo} />
+        <CVInput inputGeneralInfo={this.inputGeneralInfo} state={this.state} />
         <CVOutput />
         <Footer />
       </div>
