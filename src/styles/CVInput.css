@@ -1,7 +1,7 @@
 .CVInput {
   grid-area: 2 / 1 / 3 / 2;
   width: 100%;
-  height: 650px;
+  height: 100%;
   border: 1px solid dimgray;
   box-shadow: 1px 1px gainsboro;
   border-radius: 7px;
@@ -9,7 +9,33 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow-y: scroll;
+  overflow-y: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #c6c5b9;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6f777a;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #393d3f;
 }
 
 .CVInput hr {

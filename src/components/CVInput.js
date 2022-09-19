@@ -10,11 +10,12 @@ class CVInput extends Component {
     super(props);
   }
   render() {
+    const { inputGeneralInfo } = this.props;
     return (
       <div className="CVInput">
         General Info:
         <hr></hr>
-        <GeneralInfoInput />
+        <GeneralInfoInput inputGeneralInfo={inputGeneralInfo} />
         Professional Summary:
         <hr></hr>
         <SummaryInput />
