@@ -142,23 +142,15 @@ class App extends Component {
     console.log(id, input, index);
     switch (id) {
       case "company":
+        let items = [
+          ...this.state.workExp.filter((obj) => obj.index === index),
+        ];
+        let item = { ...items[0], company: input };
+        items[0] = item;
         this.setState({
           workExp: [
             ...this.state.workExp.filter((obj) => obj.index !== index),
-            this.state.workExp.filter((obj) => {
-              if (obj.index === index) {
-                obj.company = input;
-                obj.position = this.state.workExp.filter(
-                  (item) => item.index === index
-                ).position;
-                obj.startDate = this.state.workExp[index].startDate;
-                obj.endDate = this.state.workExp.endDate;
-                obj.location = this.state.workExp.location;
-                obj.tasks = this.state.workExp.tasks;
-                obj.index = this.state.workExp[index].index;
-              }
-              return obj;
-            }),
+            items[0],
           ],
         });
         console.log(this.state.workExp);
