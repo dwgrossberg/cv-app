@@ -5,11 +5,27 @@ class SummaryInput extends Component {
   constructor(props) {
     super(props);
   }
+
+  handleChange = (e) => {
+    this.props.inputSummary(e.target.id, e.target.value);
+  };
+
   render() {
+    const { state } = this.props;
     return (
       <div className="SummaryInput">
-        <input type="text" id="title" value="title"></input>
-        <input type="text" id="profSummary" value="professionalSummary"></input>
+        <input
+          onChange={this.handleChange}
+          type="text"
+          id="title"
+          value={state.profSummary.title}
+        ></input>
+        <input
+          onChange={this.handleChange}
+          type="text"
+          id="summary"
+          value={state.profSummary.summary}
+        ></input>
       </div>
     );
   }

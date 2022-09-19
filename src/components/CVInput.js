@@ -10,7 +10,7 @@ class CVInput extends Component {
     super(props);
   }
   render() {
-    const { inputGeneralInfo, state } = this.props;
+    const { inputGeneralInfo, inputSummary, inputWorkExp, state } = this.props;
     return (
       <div className="CVInput">
         General Info:
@@ -18,10 +18,14 @@ class CVInput extends Component {
         <GeneralInfoInput inputGeneralInfo={inputGeneralInfo} state={state} />
         Professional Summary:
         <hr></hr>
-        <SummaryInput />
+        <SummaryInput inputSummary={inputSummary} state={state} />
         Work Experience:
         <hr></hr>
-        <WorkInput />
+        <WorkInput
+          inputWorkExp={inputWorkExp}
+          state={state}
+          index={state.workExp[0].index}
+        />
         <div className="buttons">
           <button id="moreWork">Add more</button>
           <button id="removeWork">Remove</button>

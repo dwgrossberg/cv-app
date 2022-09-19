@@ -3,6 +3,7 @@ import CVInput from "./components/CVInput";
 import CVOutput from "./components/CVOutput";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import uniqid from "uniqid";
 import "./styles/App.css";
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
           endDate: "",
           location: "",
           tasks: "",
+          index: 0,
         },
       ],
       education: [
@@ -40,10 +42,11 @@ class App extends Component {
     };
 
     this.inputGeneralInfo = this.inputGeneralInfo.bind(this);
+    this.inputSummary = this.inputSummary.bind(this);
+    this.inputWorkExp = this.inputWorkExp.bind(this);
   }
 
   inputGeneralInfo = (id, input) => {
-    console.log(id, input);
     switch (id) {
       case "firstName":
         this.setState({
@@ -110,11 +113,71 @@ class App extends Component {
     }
   };
 
+  inputSummary = (id, input) => {
+    switch (id) {
+      case "title":
+        this.setState({
+          profSummary: {
+            title: input,
+            summary: this.state.profSummary.summary,
+          },
+        });
+        console.log(this.state.profSummary);
+        break;
+      case "summary":
+        this.setState({
+          profSummary: {
+            title: this.state.profSummary.title,
+            summary: input,
+          },
+        });
+        console.log(this.state.profSummary);
+        break;
+      default:
+        console.log(id);
+    }
+  };
+
+  inputWorkExp = (id, input, index) => {
+    console.log(id, input, index);
+    switch (id) {
+      case "company":
+        this.setState({
+          workExp: [
+            ...this.state.workExp.filter((obj) => obj.index !== index),
+            this.state.workExp.filter((obj) => {
+              if (obj.index === index) {
+                obj.company = input;
+                obj.position = this.state.workExp.filter(
+                  (item) => item.index === index
+                ).position;
+                obj.startDate = this.state.workExp[index].startDate;
+                obj.endDate = this.state.workExp.endDate;
+                obj.location = this.state.workExp.location;
+                obj.tasks = this.state.workExp.tasks;
+                obj.index = this.state.workExp[index].index;
+              }
+              return obj;
+            }),
+          ],
+        });
+        console.log(this.state.workExp);
+        break;
+      default:
+        console.log(id);
+    }
+  };
+
   render() {
     return (
       <div className="App">
         <Header />
-        <CVInput inputGeneralInfo={this.inputGeneralInfo} state={this.state} />
+        <CVInput
+          inputGeneralInfo={this.inputGeneralInfo}
+          inputSummary={this.inputSummary}
+          inputWorkExp={this.inputWorkExp}
+          state={this.state}
+        />
         <CVOutput />
         <Footer />
       </div>
