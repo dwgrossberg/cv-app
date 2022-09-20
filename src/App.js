@@ -142,15 +142,85 @@ class App extends Component {
     console.log(id, input, index);
     switch (id) {
       case "company":
-        let items = [
+        let itemsCompany = [
           ...this.state.workExp.filter((obj) => obj.index === index),
         ];
-        let item = { ...items[0], company: input };
-        items[0] = item;
+        let itemCompany = { ...itemsCompany[0], company: input };
+        itemsCompany[0] = itemCompany;
         this.setState({
           workExp: [
             ...this.state.workExp.filter((obj) => obj.index !== index),
-            items[0],
+            itemsCompany[0],
+          ],
+        });
+        console.log(this.state.workExp);
+        break;
+      case "position":
+        let itemsPosition = [
+          ...this.state.workExp.filter((obj) => obj.index === index),
+        ];
+        let itemPosition = { ...itemsPosition[0], position: input };
+        itemsPosition[0] = itemPosition;
+        this.setState({
+          workExp: [
+            ...this.state.workExp.filter((obj) => obj.index !== index),
+            itemsPosition[0],
+          ],
+        });
+        console.log(this.state.workExp);
+        break;
+      case "workStartDate":
+        let itemsStartDate = [
+          ...this.state.workExp.filter((obj) => obj.index === index),
+        ];
+        let itemStartDate = { ...itemsStartDate[0], startDate: input };
+        itemsStartDate[0] = itemStartDate;
+        this.setState({
+          workExp: [
+            ...this.state.workExp.filter((obj) => obj.index !== index),
+            itemsStartDate[0],
+          ],
+        });
+        console.log(this.state.workExp);
+        break;
+      case "workEndDate":
+        let itemsEndDate = [
+          ...this.state.workExp.filter((obj) => obj.index === index),
+        ];
+        let itemEndDate = { ...itemsEndDate[0], endDate: input };
+        itemsEndDate[0] = itemEndDate;
+        this.setState({
+          workExp: [
+            ...this.state.workExp.filter((obj) => obj.index !== index),
+            itemsEndDate[0],
+          ],
+        });
+        console.log(this.state.workExp);
+        break;
+      case "location":
+        let itemsLocation = [
+          ...this.state.workExp.filter((obj) => obj.index === index),
+        ];
+        let itemLocation = { ...itemsLocation[0], location: input };
+        itemsLocation[0] = itemLocation;
+        this.setState({
+          workExp: [
+            ...this.state.workExp.filter((obj) => obj.index !== index),
+            itemsLocation[0],
+          ],
+        });
+        console.log(this.state.workExp);
+        break;
+      case "workTasks":
+        let itemsTasks = [
+          ...this.state.workExp.filter((obj) => obj.index === index),
+        ];
+        let itemTask = { ...itemsTasks[0], tasks: input };
+        itemsTasks[0] = itemTask;
+        this.setState({
+          workExp: [
+            ...this.state.workExp.filter((obj) => obj.index !== index),
+            itemsTasks[0],
           ],
         });
         console.log(this.state.workExp);

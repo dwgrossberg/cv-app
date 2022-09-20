@@ -53,7 +53,7 @@ class WorkInput extends Component {
           <input
             onChange={this.handleChange}
             type="text"
-            id="workSummary"
+            id="workTasks"
             value={state.workExp.filter((obj) => obj.index === index).tasks}
           ></input>
         </div>
