@@ -19,15 +19,13 @@ class EducationInput extends Component {
             onChange={this.handleChange}
             type="text"
             id="university"
-            value={
-              state.education.filter((obj) => obj.index === index).university
-            }
+            value={state.education[index].university}
           ></input>
           <input
             onChange={this.handleChange}
             type="text"
             id="degree"
-            value={state.education.filter((obj) => obj.index === index).degree}
+            value={state.education[index].degree}
           ></input>
         </div>
         <div className="schoolToFrom">
@@ -35,22 +33,24 @@ class EducationInput extends Component {
             onChange={this.handleChange}
             type="date"
             id="schoolStartDate"
-            value={
-              state.education.filter((obj) => obj.index === index).startDate
-            }
+            value={state.education[index].startDate}
           ></input>
           <input
             onChange={this.handleChange}
             type="date"
             id="schoolEndDate"
-            value={state.education.filter((obj) => obj.index === index).endDate}
+            value={state.education[index].endDate}
           ></input>
           <input
             onChange={this.handleChange}
             type="number"
             id="gpa"
-            value={state.education.filter((obj) => obj.index === index).gpa}
+            value={state.education[index].gpa}
           ></input>
+        </div>
+        <div className="buttons">
+          <button id="moreWork0">Add more</button>
+          <button id="removeWork0">Remove</button>
         </div>
       </div>
     );

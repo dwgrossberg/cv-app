@@ -9,6 +9,14 @@ class CVInput extends Component {
   constructor(props) {
     super(props);
   }
+  setTextAreaHeight = (elem) => {
+    elem.style.height = elem.scrollHeight + "px";
+  };
+  componentDidMount() {
+    this.setTextAreaHeight(document.getElementById("summary"));
+    this.setTextAreaHeight(document.getElementById("workTasks"));
+  }
+  const;
   render() {
     const {
       inputGeneralInfo,
@@ -32,10 +40,6 @@ class CVInput extends Component {
           state={state}
           index={state.workExp[0].index}
         />
-        <div className="buttons">
-          <button id="moreWork">Add more</button>
-          <button id="removeWork">Remove</button>
-        </div>
         Education:
         <hr></hr>
         <EducationInput
@@ -43,10 +47,7 @@ class CVInput extends Component {
           state={state}
           index={state.education[0].index}
         />
-        <div className="buttons">
-          <button id="moreEdu">Add more</button>
-          <button id="removeEdu">Remove</button>
-        </div>
+        <div className="buttons"></div>
       </div>
     );
   }

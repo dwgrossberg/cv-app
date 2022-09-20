@@ -20,12 +20,12 @@ class SummaryInput extends Component {
           id="title"
           value={state.profSummary.title}
         ></input>
-        <input
+        <textarea
           onChange={this.handleChange}
           type="text"
           id="summary"
           value={state.profSummary.summary}
-        ></input>
+        ></textarea>
       </div>
     );
   }

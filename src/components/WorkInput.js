@@ -19,13 +19,13 @@ class WorkInput extends Component {
             onChange={this.handleChange}
             type="text"
             id="company"
-            value={state.workExp.filter((obj) => obj.index === index).company}
+            value={state.workExp[index].company}
           ></input>
           <input
             onChange={this.handleChange}
             type="text"
             id="position"
-            value={state.workExp.filter((obj) => obj.index === index).position}
+            value={state.workExp[index].position}
           ></input>
         </div>
         <div className="expInfo">
@@ -33,28 +33,32 @@ class WorkInput extends Component {
             onChange={this.handleChange}
             type="date"
             id="workStartDate"
-            value={state.workExp.filter((obj) => obj.index === index).startDate}
+            value={state.workExp[index].startDate}
           ></input>
           <input
             onChange={this.handleChange}
             type="date"
             id="workEndDate"
-            value={state.workExp.filter((obj) => obj.index === index).endDate}
+            value={state.workExp[index].endDate}
           ></input>
           <input
             onChange={this.handleChange}
             type="text"
             id="location"
-            value={state.workExp.filter((obj) => obj.index === index).location}
+            value={state.workExp[index].location}
           ></input>
         </div>
         <div className="workTasks">
-          <input
+          <textarea
             onChange={this.handleChange}
             type="text"
             id="workTasks"
-            value={state.workExp.filter((obj) => obj.index === index).tasks}
-          ></input>
+            value={state.workExp[index].tasks}
+          ></textarea>
+        </div>
+        <div className="buttons">
+          <button id="moreWork0">Add more</button>
+          <button id="removeWork0">Remove</button>
         </div>
       </div>
     );
