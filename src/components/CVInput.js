@@ -9,6 +9,7 @@ class CVInput extends Component {
   constructor(props) {
     super(props);
   }
+
   setTextAreaHeight = (elem) => {
     elem.style.height = elem.scrollHeight + "px";
   };
@@ -16,15 +17,17 @@ class CVInput extends Component {
     this.setTextAreaHeight(document.getElementById("summary"));
     this.setTextAreaHeight(document.getElementById("workTasks"));
   }
-  const;
   render() {
     const {
       inputGeneralInfo,
       inputSummary,
       inputWorkExp,
       inputEducation,
+      addWorkExp,
+      removeWorkExp,
       state,
     } = this.props;
+
     return (
       <div className="CVInput">
         General Info:
@@ -35,18 +38,30 @@ class CVInput extends Component {
         <SummaryInput inputSummary={inputSummary} state={state} />
         Work Experience:
         <hr></hr>
-        <WorkInput
-          inputWorkExp={inputWorkExp}
-          state={state}
-          index={state.workExp[0].index}
-        />
+        {state.workExp.map((work) => {
+          return (
+            <WorkInput
+              key={"WorkExp" + work.index}
+              inputWorkExp={inputWorkExp}
+              state={state}
+              index={work.index}
+              addWorkExp={addWorkExp}
+              removeWorkExp={removeWorkExp}
+            />
+          );
+        })}
         Education:
         <hr></hr>
-        <EducationInput
-          inputEducation={inputEducation}
-          state={state}
-          index={state.education[0].index}
-        />
+        {state.education.map((edu) => {
+          return (
+            <EducationInput
+              key={"Edu" + edu.index}
+              inputEducation={inputEducation}
+              state={state}
+              index={edu.index}
+            />
+          );
+        })}
         <div className="buttons"></div>
       </div>
     );

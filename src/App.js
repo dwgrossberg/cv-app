@@ -50,6 +50,8 @@ class App extends Component {
     this.inputSummary = this.inputSummary.bind(this);
     this.inputWorkExp = this.inputWorkExp.bind(this);
     this.inputEducation = this.inputEducation.bind(this);
+    this.addWorkExp = this.addWorkExp.bind(this);
+    this.removeWorkExp = this.removeWorkExp.bind(this);
   }
 
   inputGeneralInfo = (id, input) => {
@@ -312,6 +314,31 @@ class App extends Component {
     }
   };
 
+  addWorkExp = (id) => {
+    this.setState({
+      workExp: [
+        ...this.state.workExp,
+        {
+          company: "company",
+          position: "position",
+          startDate: "startDate",
+          endDate: "endDate",
+          location: "location",
+          tasks: "workTasks",
+          index: this.state.workExp.length,
+        },
+      ],
+    });
+    console.log(id);
+  };
+
+  removeWorkExp = (index) => {
+    console.log(index);
+    this.setState({
+      workExp: [...this.state.workExp.filter((obj) => obj.index === index)],
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -321,6 +348,8 @@ class App extends Component {
           inputSummary={this.inputSummary}
           inputWorkExp={this.inputWorkExp}
           inputEducation={this.inputEducation}
+          addWorkExp={this.addWorkExp}
+          removeWorkExp={this.removeWorkExp}
           state={this.state}
         />
         <CVOutput state={this.state} />

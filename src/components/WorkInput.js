@@ -10,10 +10,18 @@ class WorkInput extends Component {
     this.props.inputWorkExp(e.target.id, e.target.value, this.props.index);
   };
 
+  onAddWork = (e) => {
+    this.props.addWorkExp(e.target.id.replace(/\D/g, ""));
+  };
+
+  onRemoveWork = (e) => {
+    this.props.removeWorkExp(e.target.id.replace(/\D/g, ""));
+  };
+
   render() {
     const { state, index } = this.props;
     return (
-      <div className="WorkInput" id={index}>
+      <div className="WorkInput" id={"WorkExp" + index}>
         <div className="companyInfo">
           <input
             onChange={this.handleChange}
@@ -57,8 +65,15 @@ class WorkInput extends Component {
           ></textarea>
         </div>
         <div className="buttons">
-          <button id="moreWork0">Add more</button>
-          <button id="removeWork0">Remove</button>
+          <button
+            onClick={this.onAddWork}
+            id={"moreWork" + state.workExp[index].index}
+          >
+            Add more
+          </button>
+          <button onClick={this.onRemoveWork} id="removeWork0">
+            Remove
+          </button>
         </div>
       </div>
     );

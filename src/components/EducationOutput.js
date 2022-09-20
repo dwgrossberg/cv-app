@@ -19,7 +19,7 @@ class EducationOutput extends Component {
           </div>
           <div className="workCompany">
             <p>{state.education[index].degree}</p>
-            <p>{state.education[index].gpa}</p>
+            <p>GPA: {state.education[index].gpa}</p>
           </div>
         </div>
       </div>

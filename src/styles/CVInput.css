@@ -122,8 +122,16 @@ button[id^="removeEdu"]:hover {
 }
 
 #workTasks,
-#summary {
-  height: 60px;
+#summary,
+#workStartDate,
+#workEndDate,
+#schoolStartDate,
+#schoolEndDate {
   font-family: "Montserrat";
   font-size: 12px;
+}
+
+#removeWork0 {
+  pointer-events: none;
+  display: none;
 }
