@@ -10,15 +10,16 @@ class CVOutput extends Component {
     super(props);
   }
   render() {
+    const { state } = this.props;
     return (
       <div className="CVOutput">
-        <GeneralInfoOutput />
-        <SummaryOutput />
+        <GeneralInfoOutput state={state} />
+        <SummaryOutput state={state} />
         <hr></hr>
         <p className="exp">Work Experience</p>
-        <WorkOutput />
+        <WorkOutput state={state} index={state.workExp[0].index} />
         <div className="exp">Education</div>
-        <EducationOutput />
+        <EducationOutput state={state} index={state.education[0].index} />
       </div>
     );
   }

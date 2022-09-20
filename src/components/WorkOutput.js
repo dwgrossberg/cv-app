@@ -6,26 +6,23 @@ class WorkOutput extends Component {
     super(props);
   }
   render() {
+    const { state, index } = this.props;
     return (
       <div className="WorkOutput">
         <div>
           <div className="workPosition">
-            <p className="position">Position</p>
+            <p className="position">{state.workExp[index].position}</p>
             <div className="workDates">
-              <p>DateFrom</p>
-              <p>DateTo</p>
+              <p>{state.workExp[index].startDate}</p>
+              <p>{state.workExp[index].endDate}</p>
             </div>
           </div>
           <div className="workCompany">
-            <p>Company</p>
-            <p>Location</p>
+            <p>{state.workExp[index].company}</p>
+            <p>{state.workExp[index].location}</p>
           </div>
         </div>
-        <p className="workTasks">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident.
-        </p>
+        <p className="workTasks">{state.workExp[index].tasks}</p>
       </div>
     );
   }

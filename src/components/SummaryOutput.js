@@ -6,15 +6,11 @@ class SummaryOutput extends Component {
     super(props);
   }
   render() {
+    const { state } = this.props;
     return (
       <div className="SummaryOutput">
-        <p className="summaryTitle">Title</p>
-        <p className="summarySummary">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+        <p className="summaryTitle">{state.profSummary.title}</p>
+        <p className="summarySummary">{state.profSummary.summary}</p>
       </div>
     );
   }

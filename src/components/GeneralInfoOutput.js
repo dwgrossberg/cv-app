@@ -9,11 +9,12 @@ class GeneralInfoOutput extends Component {
     super(props);
   }
   render() {
+    const { state } = this.props;
     return (
       <div className="GeneralInfoOutput">
         <div className="CVNames">
-          <p className="CVFirstName">firstName</p>
-          <p className="CVLastName">lastName</p>
+          <p className="CVFirstName">{state.generalInfo.firstName}</p>
+          <p className="CVLastName">{state.generalInfo.lastName}</p>
         </div>
         <div className="CVContact">
           <div className="iconWrapper">
@@ -22,9 +23,9 @@ class GeneralInfoOutput extends Component {
             <img alt="CVPhoneIcon" src={phoneIcon}></img>
           </div>
           <div className="contactWrapper">
-            <p className="CVCity">city</p>
-            <p className="CVEmail">email</p>
-            <p className="CVPhone">phone</p>
+            <p className="CVCity">{state.generalInfo.city}</p>
+            <p className="CVEmail">{state.generalInfo.email}</p>
+            <p className="CVPhone">{state.generalInfo.phone}</p>
           </div>
         </div>
       </div>

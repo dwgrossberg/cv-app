@@ -3,7 +3,6 @@ import CVInput from "./components/CVInput";
 import CVOutput from "./components/CVOutput";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import uniqid from "uniqid";
 import "./styles/App.css";
 
 class App extends Component {
@@ -12,31 +11,36 @@ class App extends Component {
 
     this.state = {
       generalInfo: {
-        firstName: "",
-        lastName: "",
-        city: "",
-        email: "",
-        phone: "",
+        firstName: "Jelly",
+        lastName: "BeanBean",
+        city: "Santa Fe",
+        email: "jellybean@gmail.com",
+        phone: "555-809-3450",
       },
-      profSummary: { title: "", summary: "" },
+      profSummary: {
+        title: "Software Engineer",
+        summary:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      },
       workExp: [
         {
-          company: "",
-          position: "",
-          startDate: "",
-          endDate: "",
-          location: "",
-          tasks: "",
+          company: "BigTime Startup",
+          position: "Fullstack Developer",
+          startDate: "May 2017",
+          endDate: "June 2022",
+          location: "Orlando",
+          tasks:
+            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
           index: 0,
         },
       ],
       education: [
         {
-          university: "",
-          degree: "",
-          startDate: "",
-          endDate: "",
-          gpa: "",
+          university: "The Odin Project",
+          degree: "Web Development",
+          startDate: "November 2019",
+          endDate: "May 2021",
+          gpa: "3.7",
           index: 0,
         },
       ],
@@ -319,7 +323,7 @@ class App extends Component {
           inputEducation={this.inputEducation}
           state={this.state}
         />
-        <CVOutput />
+        <CVOutput state={this.state} />
         <Footer />
       </div>
     );
