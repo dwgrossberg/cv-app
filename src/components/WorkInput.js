@@ -7,7 +7,6 @@ class WorkInput extends Component {
   }
 
   handleChange = (e) => {
-    console.log(this.props.index);
     this.props.inputWorkExp(e.target.id, e.target.value, this.props.index);
   };
 

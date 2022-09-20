@@ -37,6 +37,7 @@ class App extends Component {
           startDate: "",
           endDate: "",
           gpa: "",
+          index: 0,
         },
       ],
     };
@@ -44,6 +45,7 @@ class App extends Component {
     this.inputGeneralInfo = this.inputGeneralInfo.bind(this);
     this.inputSummary = this.inputSummary.bind(this);
     this.inputWorkExp = this.inputWorkExp.bind(this);
+    this.inputEducation = this.inputEducation.bind(this);
   }
 
   inputGeneralInfo = (id, input) => {
@@ -139,7 +141,6 @@ class App extends Component {
   };
 
   inputWorkExp = (id, input, index) => {
-    console.log(id, input, index);
     switch (id) {
       case "company":
         let itemsCompany = [
@@ -230,6 +231,83 @@ class App extends Component {
     }
   };
 
+  inputEducation = (id, input, index) => {
+    switch (id) {
+      case "university":
+        let itemsUniversity = [
+          ...this.state.education.filter((obj) => obj.index === index),
+        ];
+        let itemUniversity = { ...itemsUniversity[0], university: input };
+        itemsUniversity[0] = itemUniversity;
+        this.setState({
+          education: [
+            ...this.state.education.filter((obj) => obj.index !== index),
+            itemsUniversity[0],
+          ],
+        });
+        console.log(this.state.education);
+        break;
+      case "degree":
+        let itemsDegree = [
+          ...this.state.education.filter((obj) => obj.index === index),
+        ];
+        let itemDegree = { ...itemsDegree[0], degree: input };
+        itemsDegree[0] = itemDegree;
+        this.setState({
+          education: [
+            ...this.state.education.filter((obj) => obj.index !== index),
+            itemsDegree[0],
+          ],
+        });
+        console.log(this.state.education);
+        break;
+      case "schoolStartDate":
+        let itemsStartDate = [
+          ...this.state.education.filter((obj) => obj.index === index),
+        ];
+        let itemStartDate = { ...itemsStartDate[0], startDate: input };
+        itemsStartDate[0] = itemStartDate;
+        this.setState({
+          education: [
+            ...this.state.education.filter((obj) => obj.index !== index),
+            itemsStartDate[0],
+          ],
+        });
+        console.log(this.state.education);
+        break;
+      case "schoolEndDate":
+        let itemsEndDate = [
+          ...this.state.education.filter((obj) => obj.index === index),
+        ];
+        let itemEndDate = { ...itemsEndDate[0], endDate: input };
+        itemsStartDate[0] = itemEndDate;
+        this.setState({
+          education: [
+            ...this.state.education.filter((obj) => obj.index !== index),
+            itemsEndDate[0],
+          ],
+        });
+        console.log(this.state.education);
+        break;
+      case "gpa":
+        let itemsGPA = [
+          ...this.state.education.filter((obj) => obj.index === index),
+        ];
+        let itemGPA = { ...itemsGPA[0], gpa: input };
+        itemsGPA[0] = itemGPA;
+        this.setState({
+          education: [
+            ...this.state.education.filter((obj) => obj.index !== index),
+            itemsGPA[0],
+          ],
+        });
+        console.log(this.state.education);
+        break;
+      default:
+        console.log(id);
+    }
+  };
+
   render() {
     return (
       <div className="App">
@@ -238,6 +316,7 @@ class App extends Component {
           inputGeneralInfo={this.inputGeneralInfo}
           inputSummary={this.inputSummary}
           inputWorkExp={this.inputWorkExp}
+          inputEducation={this.inputEducation}
           state={this.state}
         />
         <CVOutput />
