@@ -333,7 +333,6 @@ class App extends Component {
   };
 
   removeWorkExp = (index) => {
-    console.log(index);
     this.setState({
       workExp: this.state.workExp.filter((obj) => {
         return obj.index !== index;

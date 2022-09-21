@@ -44,7 +44,7 @@ class CVInput extends Component {
         {state.workExp.map((work) => {
           return (
             <WorkInput
-              key={uniqid()}
+              key={work.index}
               inputWorkExp={inputWorkExp}
               state={state}
               index={work.index}
@@ -58,7 +58,7 @@ class CVInput extends Component {
         {state.education.map((edu) => {
           return (
             <EducationInput
-              key={uniqid()}
+              key={edu.index}
               inputEducation={inputEducation}
               addEducation={addEducation}
               removeEducation={removeEducation}
