@@ -3,6 +3,7 @@ import CVInput from "./components/CVInput";
 import CVOutput from "./components/CVOutput";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import uniqid from "uniqid";
 import "./styles/App.css";
 
 class App extends Component {
@@ -31,7 +32,7 @@ class App extends Component {
           location: "Orlando",
           tasks:
             "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-          index: 0,
+          index: "0",
         },
       ],
       education: [
@@ -41,7 +42,7 @@ class App extends Component {
           startDate: "2019-11-03",
           endDate: "2021-09-01",
           gpa: "3.7",
-          index: 0,
+          index: "0",
         },
       ],
     };
@@ -325,7 +326,7 @@ class App extends Component {
           endDate: new Date(),
           location: "Location",
           tasks: "Work tasks and responsibilities",
-          index: this.state.workExp.length,
+          index: uniqid(),
         },
       ],
     });
@@ -335,7 +336,7 @@ class App extends Component {
     console.log(index);
     this.setState({
       workExp: this.state.workExp.filter((obj) => {
-        return obj.index !== Number(index);
+        return obj.index !== index;
       }),
     });
   };
@@ -350,7 +351,7 @@ class App extends Component {
           startDate: new Date(),
           endDate: new Date(),
           gpa: "0",
-          index: this.state.education.length,
+          index: uniqid(),
         },
       ],
     });
@@ -362,7 +363,7 @@ class App extends Component {
     this.setState(
       {
         education: this.state.education.filter((obj) => {
-          return obj.index !== Number(index);
+          return obj.index !== index;
         }),
       },
       () => console.log(this.state)

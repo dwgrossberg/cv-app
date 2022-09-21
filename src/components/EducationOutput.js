@@ -23,7 +23,7 @@ class EducationOutput extends Component {
                 {format(
                   new Date(
                     state.education.filter(
-                      (obj) => obj.index === Number(index)
+                      (obj) => obj.index === index
                     )[0].startDate
                   ),
                   "MMM yyy"
@@ -33,7 +33,7 @@ class EducationOutput extends Component {
                 {format(
                   new Date(
                     state.education.filter(
-                      (obj) => obj.index === Number(index)
+                      (obj) => obj.index === index
                     )[0].endDate
                   ),
                   "MMM yyy"

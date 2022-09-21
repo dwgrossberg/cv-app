@@ -11,11 +11,11 @@ class WorkInput extends Component {
   };
 
   onAddWork = (e) => {
-    this.props.addWorkExp(e.target.id.replace(/\D/g, ""));
+    this.props.addWorkExp(e.target.id.split("addWork")[1]);
   };
 
   onRemoveWork = (e) => {
-    this.props.removeWorkExp(e.target.id.replace(/\D/g, ""));
+    this.props.removeWorkExp(e.target.id.split("removeWork")[1]);
   };
 
   render() {
@@ -78,7 +78,7 @@ class WorkInput extends Component {
           <button
             onClick={this.onAddWork}
             id={
-              "moreWork" +
+              "addWork" +
               state.workExp.filter((obj) => obj.index === index)[0].index
             }
           >

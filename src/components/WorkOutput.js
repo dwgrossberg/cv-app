@@ -20,7 +20,7 @@ class WorkOutput extends Component {
                 {format(
                   new Date(
                     state.workExp.filter(
-                      (obj) => obj.index === Number(index)
+                      (obj) => obj.index === index
                     )[0].startDate
                   ),
                   "MMM yyy"
@@ -30,7 +30,7 @@ class WorkOutput extends Component {
                 {format(
                   new Date(
                     state.workExp.filter(
-                      (obj) => obj.index === Number(index)
+                      (obj) => obj.index === index
                     )[0].endDate
                   ),
                   "MMM yyy"
@@ -40,21 +40,15 @@ class WorkOutput extends Component {
           </div>
           <div className="workCompany">
             <p>
-              {
-                state.workExp.filter((obj) => obj.index === Number(index))[0]
-                  .company
-              }
+              {state.workExp.filter((obj) => obj.index === index)[0].company}
             </p>
             <p>
-              {
-                state.workExp.filter((obj) => obj.index === Number(index))[0]
-                  .location
-              }
+              {state.workExp.filter((obj) => obj.index === index)[0].location}
             </p>
           </div>
         </div>
         <p className="workTasks">
-          {state.workExp.filter((obj) => obj.index === Number(index))[0].tasks}
+          {state.workExp.filter((obj) => obj.index === index)[0].tasks}
         </p>
       </div>
     );

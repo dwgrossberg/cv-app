@@ -11,11 +11,11 @@ class EducationInput extends Component {
   };
 
   onAddEdu = (e) => {
-    this.props.addEducation(e.target.id.replace(/\D/g, ""));
+    this.props.addEducation(e.target.id.split("addEducation")[1]);
   };
 
   onRemoveEdu = (e) => {
-    this.props.removeEducation(e.target.id.replace(/\D/g, ""));
+    this.props.removeEducation(e.target.id.split("removeEducation")[1]);
   };
 
   render() {
@@ -61,6 +61,7 @@ class EducationInput extends Component {
             onChange={this.handleChange}
             type="number"
             id="gpa"
+            step={0.1}
             value={state.education.filter((obj) => obj.index === index)[0].gpa}
           ></input>
         </div>
@@ -68,7 +69,7 @@ class EducationInput extends Component {
           <button
             onClick={this.onAddEdu}
             id={
-              "moreEdu" +
+              "addEducation" +
               state.education.filter((obj) => obj.index === index)[0].index
             }
           >
@@ -77,7 +78,7 @@ class EducationInput extends Component {
           <button
             onClick={this.onRemoveEdu}
             id={
-              "removeEdu" +
+              "removeEducation" +
               state.education.filter((obj) => obj.index === index)[0].index
             }
           >

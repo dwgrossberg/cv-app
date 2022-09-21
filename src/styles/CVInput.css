@@ -98,10 +98,7 @@
   gap: 10px;
 }
 
-button[id^="moreWork"],
-button[id^="removeWork"],
-button[id^="moreEdu"],
-button[id^="removeEdu"] {
+button {
   padding: 3px 5px;
   cursor: pointer;
   background-color: #c6c5b9;
@@ -113,10 +110,7 @@ button[id^="removeEdu"] {
   margin-bottom: -10px;
 }
 
-button[id^="moreWork"]:hover,
-button[id^="removeWork"]:hover,
-button[id^="moreEdu"]:hover,
-button[id^="removeEdu"]:hover {
+button:hover {
   background-color: #62929e;
   color: #fdfdff;
 }
@@ -132,7 +126,7 @@ button[id^="removeEdu"]:hover {
 }
 
 #removeWork0,
-#removeEdu0 {
+#removeEducation0 {
   pointer-events: none;
   display: none;
 }
