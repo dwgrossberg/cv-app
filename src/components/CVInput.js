@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import GeneralInfoInput from "./GeneralInfoInput";
 import WorkInput from "./WorkInput";
-import "../styles/CVInput.css";
 import EducationInput from "./EducationInput";
 import SummaryInput from "./SummaryInput";
+import uniqid from "uniqid";
+import "../styles/CVInput.css";
 
 class CVInput extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class CVInput extends Component {
         {state.workExp.map((work) => {
           return (
             <WorkInput
-              key={"WorkExp" + work.index}
+              key={uniqid()}
               inputWorkExp={inputWorkExp}
               state={state}
               index={work.index}
@@ -55,7 +56,7 @@ class CVInput extends Component {
         {state.education.map((edu) => {
           return (
             <EducationInput
-              key={"Edu" + edu.index}
+              key={uniqid()}
               inputEducation={inputEducation}
               state={state}
               index={edu.index}

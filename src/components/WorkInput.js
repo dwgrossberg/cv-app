@@ -27,13 +27,17 @@ class WorkInput extends Component {
             onChange={this.handleChange}
             type="text"
             id="company"
-            value={state.workExp[index].company}
+            value={
+              state.workExp.filter((obj) => obj.index === index)[0].company
+            }
           ></input>
           <input
             onChange={this.handleChange}
             type="text"
             id="position"
-            value={state.workExp[index].position}
+            value={
+              state.workExp.filter((obj) => obj.index === index)[0].position
+            }
           ></input>
         </div>
         <div className="expInfo">
@@ -41,19 +45,25 @@ class WorkInput extends Component {
             onChange={this.handleChange}
             type="date"
             id="workStartDate"
-            value={state.workExp[index].startDate}
+            value={
+              state.workExp.filter((obj) => obj.index === index)[0].startDate
+            }
           ></input>
           <input
             onChange={this.handleChange}
             type="date"
             id="workEndDate"
-            value={state.workExp[index].endDate}
+            value={
+              state.workExp.filter((obj) => obj.index === index)[0].endDate
+            }
           ></input>
           <input
             onChange={this.handleChange}
             type="text"
             id="location"
-            value={state.workExp[index].location}
+            value={
+              state.workExp.filter((obj) => obj.index === index)[0].location
+            }
           ></input>
         </div>
         <div className="workTasks">
@@ -61,17 +71,26 @@ class WorkInput extends Component {
             onChange={this.handleChange}
             type="text"
             id="workTasks"
-            value={state.workExp[index].tasks}
+            value={state.workExp.filter((obj) => obj.index === index)[0].tasks}
           ></textarea>
         </div>
         <div className="buttons">
           <button
             onClick={this.onAddWork}
-            id={"moreWork" + state.workExp[index].index}
+            id={
+              "moreWork" +
+              state.workExp.filter((obj) => obj.index === index)[0].index
+            }
           >
             Add more
           </button>
-          <button onClick={this.onRemoveWork} id="removeWork0">
+          <button
+            onClick={this.onRemoveWork}
+            id={
+              "removeWork" +
+              state.workExp.filter((obj) => obj.index === index)[0].index
+            }
+          >
             Remove
           </button>
         </div>

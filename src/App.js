@@ -319,12 +319,12 @@ class App extends Component {
       workExp: [
         ...this.state.workExp,
         {
-          company: "company",
-          position: "position",
-          startDate: "startDate",
-          endDate: "endDate",
+          company: "Company",
+          position: "Position",
+          startDate: "Start Date",
+          endDate: "End Date",
           location: "location",
-          tasks: "workTasks",
+          tasks: "Work tasks and responsibilities",
           index: this.state.workExp.length,
         },
       ],
@@ -334,9 +334,15 @@ class App extends Component {
 
   removeWorkExp = (index) => {
     console.log(index);
-    this.setState({
-      workExp: [...this.state.workExp.filter((obj) => obj.index === index)],
-    });
+    this.setState(
+      {
+        workExp: this.state.workExp.filter((obj) => {
+          console.log(obj.index, index);
+          return obj.index !== Number(index);
+        }),
+      },
+      () => console.log(this.state)
+    );
   };
 
   render() {

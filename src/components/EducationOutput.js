@@ -11,15 +11,34 @@ class EducationOutput extends Component {
       <div className="EducationOutput">
         <div>
           <div className="workPosition">
-            <p className="position">{state.education[index].university}</p>
+            <p className="position">
+              {
+                state.education.filter((obj) => obj.index === index)[0]
+                  .university
+              }
+            </p>
             <div className="workDates">
-              <p>{state.education[index].startDate}</p>
-              <p>{state.education[index].endDate}</p>
+              <p>
+                {
+                  state.education.filter((obj) => obj.index === index)[0]
+                    .startDate
+                }
+              </p>
+              <p>
+                {
+                  state.education.filter((obj) => obj.index === index)[0]
+                    .endDate
+                }
+              </p>
             </div>
           </div>
           <div className="workCompany">
-            <p>{state.education[index].degree}</p>
-            <p>GPA: {state.education[index].gpa}</p>
+            <p>
+              {state.education.filter((obj) => obj.index === index)[0].degree}
+            </p>
+            <p>
+              GPA: {state.education.filter((obj) => obj.index === index)[0].gpa}
+            </p>
           </div>
         </div>
       </div>

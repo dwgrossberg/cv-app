@@ -11,18 +11,42 @@ class WorkOutput extends Component {
       <div className="WorkOutput">
         <div>
           <div className="workPosition">
-            <p className="position">{state.workExp[index].position}</p>
+            <p className="position">
+              {state.workExp.filter((obj) => obj.index === index)[0].position}
+            </p>
             <div className="workDates">
-              <p>{state.workExp[index].startDate}</p>
-              <p>{state.workExp[index].endDate}</p>
+              <p>
+                {
+                  state.workExp.filter((obj) => obj.index === Number(index))[0]
+                    .startDate
+                }
+              </p>
+              <p>
+                {
+                  state.workExp.filter((obj) => obj.index === Number(index))[0]
+                    .endDate
+                }
+              </p>
             </div>
           </div>
           <div className="workCompany">
-            <p>{state.workExp[index].company}</p>
-            <p>{state.workExp[index].location}</p>
+            <p>
+              {
+                state.workExp.filter((obj) => obj.index === Number(index))[0]
+                  .company
+              }
+            </p>
+            <p>
+              {
+                state.workExp.filter((obj) => obj.index === Number(index))[0]
+                  .location
+              }
+            </p>
           </div>
         </div>
-        <p className="workTasks">{state.workExp[index].tasks}</p>
+        <p className="workTasks">
+          {state.workExp.filter((obj) => obj.index === Number(index))[0].tasks}
+        </p>
       </div>
     );
   }
