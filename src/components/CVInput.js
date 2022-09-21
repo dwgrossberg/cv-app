@@ -26,6 +26,8 @@ class CVInput extends Component {
       inputEducation,
       addWorkExp,
       removeWorkExp,
+      addEducation,
+      removeEducation,
       state,
     } = this.props;
 
@@ -58,6 +60,8 @@ class CVInput extends Component {
             <EducationInput
               key={uniqid()}
               inputEducation={inputEducation}
+              addEducation={addEducation}
+              removeEducation={removeEducation}
               state={state}
               index={edu.index}
             />

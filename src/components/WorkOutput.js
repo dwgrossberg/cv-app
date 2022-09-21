@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { format } from "date-fns";
 import "../styles/CVOutput.css";
 
 class WorkOutput extends Component {
@@ -16,16 +17,24 @@ class WorkOutput extends Component {
             </p>
             <div className="workDates">
               <p>
-                {
-                  state.workExp.filter((obj) => obj.index === Number(index))[0]
-                    .startDate
-                }
+                {format(
+                  new Date(
+                    state.workExp.filter(
+                      (obj) => obj.index === Number(index)
+                    )[0].startDate
+                  ),
+                  "MMM yyy"
+                )}
               </p>
               <p>
-                {
-                  state.workExp.filter((obj) => obj.index === Number(index))[0]
-                    .endDate
-                }
+                {format(
+                  new Date(
+                    state.workExp.filter(
+                      (obj) => obj.index === Number(index)
+                    )[0].endDate
+                  ),
+                  "MMM yyy"
+                )}
               </p>
             </div>
           </div>

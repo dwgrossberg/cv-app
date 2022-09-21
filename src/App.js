@@ -26,8 +26,8 @@ class App extends Component {
         {
           company: "BigTime Startup",
           position: "Fullstack Developer",
-          startDate: "May 2017",
-          endDate: "June 2022",
+          startDate: "2017-05-05",
+          endDate: "2022-06-30",
           location: "Orlando",
           tasks:
             "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
@@ -38,8 +38,8 @@ class App extends Component {
         {
           university: "The Odin Project",
           degree: "Web Development",
-          startDate: "November 2019",
-          endDate: "May 2021",
+          startDate: "2019-11-03",
+          endDate: "2021-09-01",
           gpa: "3.7",
           index: 0,
         },
@@ -321,23 +321,47 @@ class App extends Component {
         {
           company: "Company",
           position: "Position",
-          startDate: "Start Date",
-          endDate: "End Date",
-          location: "location",
+          startDate: new Date(),
+          endDate: new Date(),
+          location: "Location",
           tasks: "Work tasks and responsibilities",
           index: this.state.workExp.length,
+        },
+      ],
+    });
+  };
+
+  removeWorkExp = (index) => {
+    console.log(index);
+    this.setState({
+      workExp: this.state.workExp.filter((obj) => {
+        return obj.index !== Number(index);
+      }),
+    });
+  };
+
+  addEducation = (id) => {
+    this.setState({
+      education: [
+        ...this.state.education,
+        {
+          university: "University",
+          degree: "Degree",
+          startDate: new Date(),
+          endDate: new Date(),
+          gpa: "0",
+          index: this.state.education.length,
         },
       ],
     });
     console.log(id);
   };
 
-  removeWorkExp = (index) => {
+  removeEducation = (index) => {
     console.log(index);
     this.setState(
       {
-        workExp: this.state.workExp.filter((obj) => {
-          console.log(obj.index, index);
+        education: this.state.education.filter((obj) => {
           return obj.index !== Number(index);
         }),
       },
@@ -356,6 +380,8 @@ class App extends Component {
           inputEducation={this.inputEducation}
           addWorkExp={this.addWorkExp}
           removeWorkExp={this.removeWorkExp}
+          addEducation={this.addEducation}
+          removeEducation={this.removeEducation}
           state={this.state}
         />
         <CVOutput state={this.state} />

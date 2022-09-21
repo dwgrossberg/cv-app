@@ -22,7 +22,11 @@ class CVOutput extends Component {
           return <WorkOutput key={uniqid()} state={state} index={work.index} />;
         })}
         <div className="exp">Education</div>
-        <EducationOutput state={state} index={state.education[0].index} />
+        {state.education.map((edu) => {
+          return (
+            <EducationOutput key={uniqid()} state={state} index={edu.index} />
+          );
+        })}
       </div>
     );
   }

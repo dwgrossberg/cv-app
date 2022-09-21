@@ -43,6 +43,12 @@
   background: #546a7b;
 }
 
+.CVEmail,
+.CVCity,
+.CVPhone {
+  font-size: 12px;
+}
+
 .GeneralInfoOutput {
   display: flex;
   justify-content: space-between;

@@ -10,6 +10,14 @@ class EducationInput extends Component {
     this.props.inputEducation(e.target.id, e.target.value, this.props.index);
   };
 
+  onAddEdu = (e) => {
+    this.props.addEducation(e.target.id.replace(/\D/g, ""));
+  };
+
+  onRemoveEdu = (e) => {
+    this.props.removeEducation(e.target.id.replace(/\D/g, ""));
+  };
+
   render() {
     const { state, index } = this.props;
     return (
@@ -57,8 +65,24 @@ class EducationInput extends Component {
           ></input>
         </div>
         <div className="buttons">
-          <button id="moreWork0">Add more</button>
-          <button id="removeWork0">Remove</button>
+          <button
+            onClick={this.onAddEdu}
+            id={
+              "moreEdu" +
+              state.education.filter((obj) => obj.index === index)[0].index
+            }
+          >
+            Add more
+          </button>
+          <button
+            onClick={this.onRemoveEdu}
+            id={
+              "removeEdu" +
+              state.education.filter((obj) => obj.index === index)[0].index
+            }
+          >
+            Remove
+          </button>
         </div>
       </div>
     );

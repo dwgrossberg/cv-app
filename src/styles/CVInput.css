@@ -131,7 +131,8 @@ button[id^="removeEdu"]:hover {
   font-size: 12px;
 }
 
-#removeWork0 {
+#removeWork0,
+#removeEdu0 {
   pointer-events: none;
   display: none;
 }
