@@ -148,161 +148,68 @@ class App extends Component {
   };
 
   inputWorkExp = (id, input, index) => {
+    let workExp = [...this.state.workExp];
+    let items = [...this.state.workExp.filter((obj) => obj.index === index)];
+    let arrayIndex = workExp.indexOf(items[0]);
+    let item;
     switch (id) {
       case "company":
-        // Change the state obj and return it in place to the workExp array
-        let workExpCompany = [...this.state.workExp];
-        let itemsCompany = [
-          ...this.state.workExp.filter((obj) => obj.index === index),
-        ];
-        let companyIndex = workExpCompany.indexOf(itemsCompany[0]);
-        let itemCompany = { ...itemsCompany[0], company: input };
-        itemsCompany[0] = itemCompany;
-        workExpCompany[companyIndex] = itemCompany;
-        this.setState({
-          workExp: workExpCompany,
-        });
+        item = { ...items[0], company: input };
         break;
       case "position":
-        let workExpPosition = [...this.state.workExp];
-        let itemsPosition = [
-          ...this.state.workExp.filter((obj) => obj.index === index),
-        ];
-        let positionIndex = workExpPosition.indexOf(itemsPosition[0]);
-        let itemPosition = { ...itemsPosition[0], position: input };
-        itemsPosition[0] = itemPosition;
-        workExpPosition[positionIndex] = itemPosition;
-        this.setState({
-          workExp: workExpPosition,
-        });
+        item = { ...items[0], position: input };
         break;
       case "workStartDate":
-        let workExpStartDate = [...this.state.workExp];
-        let itemsStartDate = [
-          ...this.state.workExp.filter((obj) => obj.index === index),
-        ];
-        let startDateIndex = workExpStartDate.indexOf(itemsStartDate[0]);
-        let itemStartDate = { ...itemsStartDate[0], startDate: input };
-        itemsStartDate[0] = itemStartDate;
-        workExpStartDate[startDateIndex] = itemStartDate;
-        this.setState({
-          workExp: workExpStartDate,
-        });
+        item = { ...items[0], startDate: input };
         break;
       case "workEndDate":
-        let workExpEndDate = [...this.state.workExp];
-        let itemsEndDate = [
-          ...this.state.workExp.filter((obj) => obj.index === index),
-        ];
-        let endDateIndex = workExpEndDate.indexOf(itemsEndDate[0]);
-        let itemEndDate = { ...itemsEndDate[0], endDate: input };
-        itemsEndDate[0] = itemEndDate;
-        workExpEndDate[endDateIndex] = itemEndDate;
-        this.setState({
-          workExp: workExpEndDate,
-        });
+        item = { ...items[0], endDate: input };
         break;
       case "location":
-        let workExpLocation = [...this.state.workExp];
-        let itemsLocation = [
-          ...this.state.workExp.filter((obj) => obj.index === index),
-        ];
-        let locationIndex = workExpLocation.indexOf(itemsLocation[0]);
-        let itemLocation = { ...itemsLocation[0], location: input };
-        itemsLocation[0] = itemLocation;
-        workExpLocation[locationIndex] = itemLocation;
-        this.setState({
-          workExp: workExpLocation,
-        });
+        item = { ...items[0], location: input };
         break;
       case "workTasks":
-        let workExpTasks = [...this.state.workExp];
-        let itemsTasks = [
-          ...this.state.workExp.filter((obj) => obj.index === index),
-        ];
-        let tasksIndex = workExpTasks.indexOf(itemsTasks[0]);
-        let itemTask = { ...itemsTasks[0], tasks: input };
-        itemsTasks[0] = itemTask;
-        workExpTasks[tasksIndex] = itemTask;
-        this.setState({
-          workExp: workExpTasks,
-        });
+        item = { ...items[0], tasks: input };
         break;
       default:
         console.log(id);
     }
+    items[0] = item;
+    workExp[arrayIndex] = item;
+    this.setState({
+      workExp: workExp,
+    });
   };
 
   inputEducation = (id, input, index) => {
+    let education = [...this.state.education];
+    let items = [...this.state.education.filter((obj) => obj.index === index)];
+    let arrayIndex = education.indexOf(items[0]);
+    let item;
     switch (id) {
       case "university":
-        let educationUniversity = [...this.state.education];
-        let itemsUniversity = [
-          ...this.state.education.filter((obj) => obj.index === index),
-        ];
-        let universityIndex = educationUniversity.indexOf(itemsUniversity[0]);
-        let itemUniversity = { ...itemsUniversity[0], university: input };
-        itemsUniversity[0] = itemUniversity;
-        educationUniversity[universityIndex] = itemUniversity;
-        this.setState({
-          education: educationUniversity,
-        });
+        item = { ...items[0], university: input };
         break;
       case "degree":
-        let educationDegree = [...this.state.education];
-        let itemsDegree = [
-          ...this.state.education.filter((obj) => obj.index === index),
-        ];
-        let degreeIndex = educationDegree.indexOf(itemsDegree[0]);
-        let itemDegree = { ...itemsDegree[0], degree: input };
-        itemsDegree[0] = itemDegree;
-        educationDegree[degreeIndex] = itemDegree;
-        this.setState({
-          education: educationDegree,
-        });
+        item = { ...items[0], degree: input };
         break;
       case "schoolStartDate":
-        let educationStartDate = [...this.state.education];
-        let itemsStartDate = [
-          ...this.state.education.filter((obj) => obj.index === index),
-        ];
-        let startDateIndex = educationStartDate.indexOf(itemsStartDate[0]);
-        let itemStartDate = { ...itemsStartDate[0], startDate: input };
-        itemsStartDate[0] = itemStartDate;
-        educationStartDate[startDateIndex] = itemStartDate;
-        this.setState({
-          education: educationStartDate,
-        });
+        item = { ...items[0], startDate: input };
         break;
       case "schoolEndDate":
-        let educationEndDate = [...this.state.education];
-        let itemsEndDate = [
-          ...this.state.education.filter((obj) => obj.index === index),
-        ];
-        let endDateIndex = educationEndDate.indexOf(itemsEndDate[0]);
-        let itemEndDate = { ...itemsEndDate[0], endDate: input };
-        itemsEndDate[0] = itemEndDate;
-        educationEndDate[endDateIndex] = itemEndDate;
-        this.setState({
-          education: educationEndDate,
-        });
+        item = { ...items[0], endDate: input };
         break;
       case "gpa":
-        let educationGPA = [...this.state.education];
-        let itemsGPA = [
-          ...this.state.education.filter((obj) => obj.index === index),
-        ];
-        let gpaIndex = educationGPA.indexOf(itemsGPA[0]);
-        let itemGPA = { ...itemsGPA[0], gpa: input };
-        itemsGPA[0] = itemGPA;
-        educationGPA[gpaIndex] = itemGPA;
-        this.setState({
-          education: educationGPA,
-        });
+        item = { ...items[0], gpa: input };
         break;
       default:
-        console.log(id, input, index);
+        console.log(id);
     }
+    items[0] = item;
+    education[arrayIndex] = item;
+    this.setState({
+      education: education,
+    });
   };
 
   addWorkExp = (id) => {
