@@ -348,7 +348,6 @@ class App extends Component {
   };
 
   removeEducation = (index) => {
-    console.log(index);
     this.setState(
       {
         education: this.state.education.filter((obj) => {
