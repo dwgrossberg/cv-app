@@ -3,7 +3,6 @@ import GeneralInfoInput from "./GeneralInfoInput";
 import WorkInput from "./WorkInput";
 import EducationInput from "./EducationInput";
 import SummaryInput from "./SummaryInput";
-import uniqid from "uniqid";
 import "../styles/CVInput.css";
 
 class CVInput extends Component {

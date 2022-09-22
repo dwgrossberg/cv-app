@@ -3,7 +3,6 @@ import GeneralInfoOutput from "./GeneralInfoOutput";
 import SummaryOutput from "./SummaryOutput";
 import WorkOutput from "./WorkOutput";
 import EducationOutput from "./EducationOutput";
-import uniqid from "uniqid";
 import "../styles/CVOutput.css";
 
 class CVOutput extends Component {
@@ -19,12 +18,14 @@ class CVOutput extends Component {
         <hr></hr>
         <p className="exp">Work Experience</p>
         {state.workExp.map((work) => {
-          return <WorkOutput key={uniqid()} state={state} index={work.index} />;
+          return (
+            <WorkOutput key={work.index} state={state} index={work.index} />
+          );
         })}
         <div className="exp">Education</div>
         {state.education.map((edu) => {
           return (
-            <EducationOutput key={uniqid()} state={state} index={edu.index} />
+            <EducationOutput key={edu.index} state={state} index={edu.index} />
           );
         })}
       </div>

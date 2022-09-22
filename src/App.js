@@ -150,88 +150,83 @@ class App extends Component {
   inputWorkExp = (id, input, index) => {
     switch (id) {
       case "company":
+        // Change the state obj and return it in place to the workExp array
+        let workExpCompany = [...this.state.workExp];
         let itemsCompany = [
           ...this.state.workExp.filter((obj) => obj.index === index),
         ];
+        let companyIndex = workExpCompany.indexOf(itemsCompany[0]);
         let itemCompany = { ...itemsCompany[0], company: input };
         itemsCompany[0] = itemCompany;
+        workExpCompany[companyIndex] = itemCompany;
         this.setState({
-          workExp: [
-            ...this.state.workExp.filter((obj) => obj.index !== index),
-            itemsCompany[0],
-          ],
+          workExp: workExpCompany,
         });
-        console.log(this.state.workExp);
         break;
       case "position":
+        let workExpPosition = [...this.state.workExp];
         let itemsPosition = [
           ...this.state.workExp.filter((obj) => obj.index === index),
         ];
+        let positionIndex = workExpPosition.indexOf(itemsPosition[0]);
         let itemPosition = { ...itemsPosition[0], position: input };
         itemsPosition[0] = itemPosition;
+        workExpPosition[positionIndex] = itemPosition;
         this.setState({
-          workExp: [
-            ...this.state.workExp.filter((obj) => obj.index !== index),
-            itemsPosition[0],
-          ],
+          workExp: workExpPosition,
         });
-        console.log(this.state.workExp);
         break;
       case "workStartDate":
+        let workExpStartDate = [...this.state.workExp];
         let itemsStartDate = [
           ...this.state.workExp.filter((obj) => obj.index === index),
         ];
+        let startDateIndex = workExpStartDate.indexOf(itemsStartDate[0]);
         let itemStartDate = { ...itemsStartDate[0], startDate: input };
         itemsStartDate[0] = itemStartDate;
+        workExpStartDate[startDateIndex] = itemStartDate;
         this.setState({
-          workExp: [
-            ...this.state.workExp.filter((obj) => obj.index !== index),
-            itemsStartDate[0],
-          ],
+          workExp: workExpStartDate,
         });
-        console.log(this.state.workExp);
         break;
       case "workEndDate":
+        let workExpEndDate = [...this.state.workExp];
         let itemsEndDate = [
           ...this.state.workExp.filter((obj) => obj.index === index),
         ];
+        let endDateIndex = workExpEndDate.indexOf(itemsEndDate[0]);
         let itemEndDate = { ...itemsEndDate[0], endDate: input };
         itemsEndDate[0] = itemEndDate;
+        workExpEndDate[endDateIndex] = itemEndDate;
         this.setState({
-          workExp: [
-            ...this.state.workExp.filter((obj) => obj.index !== index),
-            itemsEndDate[0],
-          ],
+          workExp: workExpEndDate,
         });
-        console.log(this.state.workExp);
         break;
       case "location":
+        let workExpLocation = [...this.state.workExp];
         let itemsLocation = [
           ...this.state.workExp.filter((obj) => obj.index === index),
         ];
+        let locationIndex = workExpLocation.indexOf(itemsLocation[0]);
         let itemLocation = { ...itemsLocation[0], location: input };
         itemsLocation[0] = itemLocation;
+        workExpLocation[locationIndex] = itemLocation;
         this.setState({
-          workExp: [
-            ...this.state.workExp.filter((obj) => obj.index !== index),
-            itemsLocation[0],
-          ],
+          workExp: workExpLocation,
         });
-        console.log(this.state.workExp);
         break;
       case "workTasks":
+        let workExpTasks = [...this.state.workExp];
         let itemsTasks = [
           ...this.state.workExp.filter((obj) => obj.index === index),
         ];
+        let tasksIndex = workExpTasks.indexOf(itemsTasks[0]);
         let itemTask = { ...itemsTasks[0], tasks: input };
         itemsTasks[0] = itemTask;
+        workExpTasks[tasksIndex] = itemTask;
         this.setState({
-          workExp: [
-            ...this.state.workExp.filter((obj) => obj.index !== index),
-            itemsTasks[0],
-          ],
+          workExp: workExpTasks,
         });
-        console.log(this.state.workExp);
         break;
       default:
         console.log(id);
@@ -241,77 +236,72 @@ class App extends Component {
   inputEducation = (id, input, index) => {
     switch (id) {
       case "university":
+        let educationUniversity = [...this.state.education];
         let itemsUniversity = [
           ...this.state.education.filter((obj) => obj.index === index),
         ];
+        let universityIndex = educationUniversity.indexOf(itemsUniversity[0]);
         let itemUniversity = { ...itemsUniversity[0], university: input };
         itemsUniversity[0] = itemUniversity;
+        educationUniversity[universityIndex] = itemUniversity;
         this.setState({
-          education: [
-            ...this.state.education.filter((obj) => obj.index !== index),
-            itemsUniversity[0],
-          ],
+          education: educationUniversity,
         });
-        console.log(this.state.education);
         break;
       case "degree":
+        let educationDegree = [...this.state.education];
         let itemsDegree = [
           ...this.state.education.filter((obj) => obj.index === index),
         ];
+        let degreeIndex = educationDegree.indexOf(itemsDegree[0]);
         let itemDegree = { ...itemsDegree[0], degree: input };
         itemsDegree[0] = itemDegree;
+        educationDegree[degreeIndex] = itemDegree;
         this.setState({
-          education: [
-            ...this.state.education.filter((obj) => obj.index !== index),
-            itemsDegree[0],
-          ],
+          education: educationDegree,
         });
-        console.log(this.state.education);
         break;
       case "schoolStartDate":
+        let educationStartDate = [...this.state.education];
         let itemsStartDate = [
           ...this.state.education.filter((obj) => obj.index === index),
         ];
+        let startDateIndex = educationStartDate.indexOf(itemsStartDate[0]);
         let itemStartDate = { ...itemsStartDate[0], startDate: input };
         itemsStartDate[0] = itemStartDate;
+        educationStartDate[startDateIndex] = itemStartDate;
         this.setState({
-          education: [
-            ...this.state.education.filter((obj) => obj.index !== index),
-            itemsStartDate[0],
-          ],
+          education: educationStartDate,
         });
-        console.log(this.state.education);
         break;
       case "schoolEndDate":
+        let educationEndDate = [...this.state.education];
         let itemsEndDate = [
           ...this.state.education.filter((obj) => obj.index === index),
         ];
+        let endDateIndex = educationEndDate.indexOf(itemsEndDate[0]);
         let itemEndDate = { ...itemsEndDate[0], endDate: input };
-        itemsStartDate[0] = itemEndDate;
+        itemsEndDate[0] = itemEndDate;
+        educationEndDate[endDateIndex] = itemEndDate;
         this.setState({
-          education: [
-            ...this.state.education.filter((obj) => obj.index !== index),
-            itemsEndDate[0],
-          ],
+          education: educationEndDate,
         });
-        console.log(this.state.education);
         break;
       case "gpa":
+        let educationGPA = [...this.state.education];
         let itemsGPA = [
           ...this.state.education.filter((obj) => obj.index === index),
         ];
+        let gpaIndex = educationGPA.indexOf(itemsGPA[0]);
         let itemGPA = { ...itemsGPA[0], gpa: input };
         itemsGPA[0] = itemGPA;
+        educationGPA[gpaIndex] = itemGPA;
         this.setState({
-          education: [
-            ...this.state.education.filter((obj) => obj.index !== index),
-            itemsGPA[0],
-          ],
+          education: educationGPA,
         });
-        console.log(this.state.education);
         break;
       default:
-        console.log(id);
+        console.log(id, input, index);
     }
   };
 
