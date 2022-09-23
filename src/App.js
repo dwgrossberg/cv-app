@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import CVInput from "./components/CVInput";
 import CVOutput from "./components/CVOutput";
 import Header from "./components/Header";
@@ -6,151 +6,135 @@ import Footer from "./components/Footer";
 import uniqid from "uniqid";
 import "./styles/App.css";
 
-class App extends Component {
-  constructor() {
-    super();
+const App = () => {
+  const [generalInfo, setGeneralInfo] = useState({
+    firstName: "Jelly",
+    lastName: "BeanBean",
+    city: "Santa Fe",
+    email: "jellybean@gmail.com",
+    phone: "555-809-3450"
+  });
 
-    this.state = {
-      generalInfo: {
-        firstName: "Jelly",
-        lastName: "BeanBean",
-        city: "Santa Fe",
-        email: "jellybean@gmail.com",
-        phone: "555-809-3450",
-      },
-      profSummary: {
-        title: "Software Engineer",
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      },
-      workExp: [
-        {
-          company: "BigTime Startup",
-          position: "Fullstack Developer",
-          startDate: "2017-05-05",
-          endDate: "2022-06-30",
-          location: "Orlando",
-          tasks:
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-          index: "0",
-        },
-      ],
-      education: [
-        {
-          university: "The Odin Project",
-          degree: "Web Development",
-          startDate: "2019-11-03",
-          endDate: "2021-09-01",
-          gpa: "3.7",
-          index: "0",
-        },
-      ],
-    };
+  const [profSummary, setProfSummary] = useState({
+    title: "Software Engineer",
+    summary:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  });
 
-    this.inputGeneralInfo = this.inputGeneralInfo.bind(this);
-    this.inputSummary = this.inputSummary.bind(this);
-    this.inputWorkExp = this.inputWorkExp.bind(this);
-    this.inputEducation = this.inputEducation.bind(this);
-    this.addWorkExp = this.addWorkExp.bind(this);
-    this.removeWorkExp = this.removeWorkExp.bind(this);
-  }
+  const [workExp, setWorkExp] = useState([
+    {
+      company: "BigTime Startup",
+      position: "Fullstack Developer",
+      startDate: "2017-05-05",
+      endDate: "2022-06-30",
+      location: "Orlando",
+      tasks:
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      index: "0",
+    },
+  ]);
+  
+  const [education, setEducation] = useState([
+    {
+      university: "The Odin Project",
+      degree: "Web Development",
+      startDate: "2019-11-03",
+      endDate: "2021-09-01",
+      gpa: "3.7",
+      index: "0",
+    },
+  ]);
+  
+   
+  
 
-  inputGeneralInfo = (id, input) => {
+  const inputGeneralInfo = (id, input) => {
     switch (id) {
       case "firstName":
-        this.setState({
-          generalInfo: {
-            firstName: input,
-            lastName: this.state.generalInfo.lastName,
-            city: this.state.generalInfo.city,
-            email: this.state.generalInfo.email,
-            phone: this.state.generalInfo.phone,
-          },
+        setGeneralInfo({
+          firstName: input,
+          lastName: this.state.generalInfo.lastName,
+          city: this.state.generalInfo.city,
+          email: this.state.generalInfo.email,
+          phone: this.state.generalInfo.phone,
         });
-        console.log(this.state.generalInfo);
         break;
       case "lastName":
-        this.setState({
-          generalInfo: {
+        setGeneralInfo({
+          
             firstName: this.state.generalInfo.firstName,
             lastName: input,
             city: this.state.generalInfo.city,
             email: this.state.generalInfo.email,
             phone: this.state.generalInfo.phone,
-          },
+          
         });
-        console.log(this.state.generalInfo);
         break;
       case "city":
-        this.setState({
-          generalInfo: {
+        setGeneralInfo({
+        
             firstName: this.state.generalInfo.firstName,
             lastName: this.state.generalInfo.lastName,
             city: input,
             email: this.state.generalInfo.email,
             phone: this.state.generalInfo.phone,
-          },
+          
         });
-        console.log(this.state.generalInfo);
         break;
       case "email":
-        this.setState({
-          generalInfo: {
+        setGeneralInfo({
+          
             firstName: this.state.generalInfo.firstName,
             lastName: this.state.generalInfo.lastName,
             city: this.state.generalInfo.city,
             email: input,
             phone: this.state.generalInfo.phone,
-          },
+          
         });
-        console.log(this.state.generalInfo);
         break;
       case "phone":
-        this.setState({
-          generalInfo: {
+        setGeneralInfo({
+          
             firstName: this.state.generalInfo.firstName,
             lastName: this.state.generalInfo.lastName,
             city: this.state.generalInfo.city,
             email: this.state.generalInfo.email,
             phone: input,
-          },
+          
         });
-        console.log(this.state.generalInfo);
         break;
       default:
         console.log(id);
     }
   };
 
-  inputSummary = (id, input) => {
+  const inputSummary = (id, input) => {
     switch (id) {
       case "title":
-        this.setState({
-          profSummary: {
+        setProfSummary({
+       
             title: input,
             summary: this.state.profSummary.summary,
-          },
+          
         });
-        console.log(this.state.profSummary);
         break;
       case "summary":
-        this.setState({
-          profSummary: {
+        setProfSummary({
+       
             title: this.state.profSummary.title,
             summary: input,
-          },
+          
         });
-        console.log(this.state.profSummary);
         break;
       default:
         console.log(id);
     }
   };
 
-  inputWorkExp = (id, input, index) => {
-    let workExp = [...this.state.workExp];
-    let items = [...this.state.workExp.filter((obj) => obj.index === index)];
-    let arrayIndex = workExp.indexOf(items[0]);
+  const inputWorkExp = (id, input, index) => {
+    let workExpCopy = [...workExp];
+    let items = [...workExp.filter((obj) => obj.index === index)];
+    let arrayIndex = workExpCopy.indexOf(items[0]);
     let item;
     switch (id) {
       case "company":
@@ -175,9 +159,9 @@ class App extends Component {
         console.log(id);
     }
     items[0] = item;
-    workExp[arrayIndex] = item;
-    this.setState({
-      workExp: workExp,
+    workExpCopy[arrayIndex] = item;
+    setWorkExp({
+      workExpCopy,
     });
   };
 
