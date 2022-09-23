@@ -4,7 +4,9 @@ A simple resume generator app built using React
 
 See a project demo [here](https://dwgrossberg.github.io/cv-app/) :point_left:
 
-![example-GIF](./src/assets/CV-App.gif)
+![example-GIF-one](./src/assets/cv-app-one.gif)
+
+![example-GIF-one](./src/assets/cv-app-two.gif)
 
 Written using both functional components (main branch) and class components (class-components branch).
 
