@@ -1,36 +1,36 @@
-import React, { Component } from "react";
+import React from "react";
 import GeneralInfoOutput from "./GeneralInfoOutput";
 import SummaryOutput from "./SummaryOutput";
 import WorkOutput from "./WorkOutput";
 import EducationOutput from "./EducationOutput";
 import "../styles/CVOutput.css";
 
-class CVOutput extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    const { state } = this.props;
-    return (
-      <div className="CVOutput">
-        <GeneralInfoOutput state={state} />
-        <SummaryOutput state={state} />
-        <hr></hr>
-        <p className="exp">Work Experience</p>
-        {state.workExp.map((work) => {
-          return (
-            <WorkOutput key={work.index} state={state} index={work.index} />
-          );
-        })}
-        <div className="exp">Education</div>
-        {state.education.map((edu) => {
-          return (
-            <EducationOutput key={edu.index} state={state} index={edu.index} />
-          );
-        })}
-      </div>
-    );
-  }
-}
+const CVOutput = (props) => {
+  const { generalInfo, profSummary, workExp, education } = props;
+
+  return (
+    <div className="CVOutput">
+      <GeneralInfoOutput generalInfo={generalInfo} />
+      <SummaryOutput profSummary={profSummary} />
+      <hr></hr>
+      <p className="exp">Work Experience</p>
+      {workExp.map((work) => {
+        return (
+          <WorkOutput key={work.index} workExp={workExp} index={work.index} />
+        );
+      })}
+      <div className="exp">Education</div>
+      {education.map((edu) => {
+        return (
+          <EducationOutput
+            key={edu.index}
+            education={education}
+            index={edu.index}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 export default CVOutput;

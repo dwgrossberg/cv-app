@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CVInput from "./components/CVInput";
 import CVOutput from "./components/CVOutput";
 import Header from "./components/Header";
@@ -50,45 +50,45 @@ const App = () => {
       case "firstName":
         setGeneralInfo({
           firstName: input,
-          lastName: this.state.generalInfo.lastName,
-          city: this.state.generalInfo.city,
-          email: this.state.generalInfo.email,
-          phone: this.state.generalInfo.phone,
+          lastName: generalInfo.lastName,
+          city: generalInfo.city,
+          email: generalInfo.email,
+          phone: generalInfo.phone,
         });
         break;
       case "lastName":
         setGeneralInfo({
-          firstName: this.state.generalInfo.firstName,
+          firstName: generalInfo.firstName,
           lastName: input,
-          city: this.state.generalInfo.city,
-          email: this.state.generalInfo.email,
-          phone: this.state.generalInfo.phone,
+          city: generalInfo.city,
+          email: generalInfo.email,
+          phone: generalInfo.phone,
         });
         break;
       case "city":
         setGeneralInfo({
-          firstName: this.state.generalInfo.firstName,
-          lastName: this.state.generalInfo.lastName,
+          firstName: generalInfo.firstName,
+          lastName: generalInfo.lastName,
           city: input,
-          email: this.state.generalInfo.email,
-          phone: this.state.generalInfo.phone,
+          email: generalInfo.email,
+          phone: generalInfo.phone,
         });
         break;
       case "email":
         setGeneralInfo({
-          firstName: this.state.generalInfo.firstName,
-          lastName: this.state.generalInfo.lastName,
-          city: this.state.generalInfo.city,
+          firstName: generalInfo.firstName,
+          lastName: generalInfo.lastName,
+          city: generalInfo.city,
           email: input,
-          phone: this.state.generalInfo.phone,
+          phone: generalInfo.phone,
         });
         break;
       case "phone":
         setGeneralInfo({
-          firstName: this.state.generalInfo.firstName,
-          lastName: this.state.generalInfo.lastName,
-          city: this.state.generalInfo.city,
-          email: this.state.generalInfo.email,
+          firstName: generalInfo.firstName,
+          lastName: generalInfo.lastName,
+          city: generalInfo.city,
+          email: generalInfo.email,
           phone: input,
         });
         break;
@@ -102,12 +102,12 @@ const App = () => {
       case "title":
         setProfSummary({
           title: input,
-          summary: this.state.profSummary.summary,
+          summary: profSummary.summary,
         });
         break;
       case "summary":
         setProfSummary({
-          title: this.state.profSummary.title,
+          title: profSummary.title,
           summary: input,
         });
         break;
@@ -150,7 +150,7 @@ const App = () => {
 
   const inputEducation = (id, input, index) => {
     let educationCopy = [...education];
-    let items = [...this.state.education.filter((obj) => obj.index === index)];
+    let items = [...education.filter((obj) => obj.index === index)];
     let arrayIndex = educationCopy.indexOf(items[0]);
     let item;
     switch (id) {
