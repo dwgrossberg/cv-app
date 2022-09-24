@@ -12,7 +12,7 @@ const App = () => {
     lastName: "BeanBean",
     city: "Santa Fe",
     email: "jellybean@gmail.com",
-    phone: "555-809-3450"
+    phone: "555-809-3450",
   });
 
   const [profSummary, setProfSummary] = useState({
@@ -33,7 +33,7 @@ const App = () => {
       index: "0",
     },
   ]);
-  
+
   const [education, setEducation] = useState([
     {
       university: "The Odin Project",
@@ -44,9 +44,6 @@ const App = () => {
       index: "0",
     },
   ]);
-  
-   
-  
 
   const inputGeneralInfo = (id, input) => {
     switch (id) {
@@ -61,46 +58,38 @@ const App = () => {
         break;
       case "lastName":
         setGeneralInfo({
-          
-            firstName: this.state.generalInfo.firstName,
-            lastName: input,
-            city: this.state.generalInfo.city,
-            email: this.state.generalInfo.email,
-            phone: this.state.generalInfo.phone,
-          
+          firstName: this.state.generalInfo.firstName,
+          lastName: input,
+          city: this.state.generalInfo.city,
+          email: this.state.generalInfo.email,
+          phone: this.state.generalInfo.phone,
         });
         break;
       case "city":
         setGeneralInfo({
-        
-            firstName: this.state.generalInfo.firstName,
-            lastName: this.state.generalInfo.lastName,
-            city: input,
-            email: this.state.generalInfo.email,
-            phone: this.state.generalInfo.phone,
-          
+          firstName: this.state.generalInfo.firstName,
+          lastName: this.state.generalInfo.lastName,
+          city: input,
+          email: this.state.generalInfo.email,
+          phone: this.state.generalInfo.phone,
         });
         break;
       case "email":
         setGeneralInfo({
-          
-            firstName: this.state.generalInfo.firstName,
-            lastName: this.state.generalInfo.lastName,
-            city: this.state.generalInfo.city,
-            email: input,
-            phone: this.state.generalInfo.phone,
-          
+          firstName: this.state.generalInfo.firstName,
+          lastName: this.state.generalInfo.lastName,
+          city: this.state.generalInfo.city,
+          email: input,
+          phone: this.state.generalInfo.phone,
         });
         break;
       case "phone":
         setGeneralInfo({
-          
-            firstName: this.state.generalInfo.firstName,
-            lastName: this.state.generalInfo.lastName,
-            city: this.state.generalInfo.city,
-            email: this.state.generalInfo.email,
-            phone: input,
-          
+          firstName: this.state.generalInfo.firstName,
+          lastName: this.state.generalInfo.lastName,
+          city: this.state.generalInfo.city,
+          email: this.state.generalInfo.email,
+          phone: input,
         });
         break;
       default:
@@ -112,18 +101,14 @@ const App = () => {
     switch (id) {
       case "title":
         setProfSummary({
-       
-            title: input,
-            summary: this.state.profSummary.summary,
-          
+          title: input,
+          summary: this.state.profSummary.summary,
         });
         break;
       case "summary":
         setProfSummary({
-       
-            title: this.state.profSummary.title,
-            summary: input,
-          
+          title: this.state.profSummary.title,
+          summary: input,
         });
         break;
       default:
@@ -160,15 +145,13 @@ const App = () => {
     }
     items[0] = item;
     workExpCopy[arrayIndex] = item;
-    setWorkExp({
-      workExpCopy,
-    });
+    setWorkExp(workExpCopy);
   };
 
-  inputEducation = (id, input, index) => {
-    let education = [...this.state.education];
+  const inputEducation = (id, input, index) => {
+    let educationCopy = [...education];
     let items = [...this.state.education.filter((obj) => obj.index === index)];
-    let arrayIndex = education.indexOf(items[0]);
+    let arrayIndex = educationCopy.indexOf(items[0]);
     let item;
     switch (id) {
       case "university":
@@ -190,85 +173,81 @@ const App = () => {
         console.log(id);
     }
     items[0] = item;
-    education[arrayIndex] = item;
-    this.setState({
-      education: education,
-    });
+    educationCopy[arrayIndex] = item;
+    setEducation(educationCopy);
   };
 
-  addWorkExp = (id) => {
-    this.setState({
-      workExp: [
-        ...this.state.workExp,
-        {
-          company: "Company",
-          position: "Position",
-          startDate: new Date(),
-          endDate: new Date(),
-          location: "Location",
-          tasks: "Work tasks and responsibilities",
-          index: uniqid(),
-        },
-      ],
-    });
-  };
-
-  removeWorkExp = (index) => {
-    this.setState({
-      workExp: this.state.workExp.filter((obj) => {
-        return obj.index !== index;
-      }),
-    });
-  };
-
-  addEducation = (id) => {
-    this.setState({
-      education: [
-        ...this.state.education,
-        {
-          university: "University",
-          degree: "Degree",
-          startDate: new Date(),
-          endDate: new Date(),
-          gpa: "0",
-          index: uniqid(),
-        },
-      ],
-    });
-    console.log(id);
-  };
-
-  removeEducation = (index) => {
-    this.setState(
+  const addWorkExp = () => {
+    setWorkExp([
+      ...workExp,
       {
-        education: this.state.education.filter((obj) => {
-          return obj.index !== index;
-        }),
+        company: "Company",
+        position: "Position",
+        startDate: new Date(),
+        endDate: new Date(),
+        location: "Location",
+        tasks: "Work tasks and responsibilities",
+        index: uniqid(),
       },
-      () => console.log(this.state)
+    ]);
+  };
+
+  const removeWorkExp = (index) => {
+    setWorkExp(
+      workExp.filter((obj) => {
+        return obj.index !== index;
+      })
     );
   };
 
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <CVInput
-          inputGeneralInfo={this.inputGeneralInfo}
-          inputSummary={this.inputSummary}
-          inputWorkExp={this.inputWorkExp}
-          inputEducation={this.inputEducation}
-          addWorkExp={this.addWorkExp}
-          removeWorkExp={this.removeWorkExp}
-          addEducation={this.addEducation}
-          removeEducation={this.removeEducation}
-          state={this.state}
-        />
-        <CVOutput state={this.state} />
-        <Footer />
-      </div>
+  const addEducation = (id) => {
+    setEducation([
+      ...education,
+      {
+        university: "University",
+        degree: "Degree",
+        startDate: new Date(),
+        endDate: new Date(),
+        gpa: "0",
+        index: uniqid(),
+      },
+    ]);
+  };
+
+  const removeEducation = (index) => {
+    setEducation(
+      education.filter((obj) => {
+        return obj.index !== index;
+      })
     );
-  }
-}
+  };
+
+  return (
+    <div className="App">
+      <Header />
+      <CVInput
+        generalInfo={generalInfo}
+        inputGeneralInfo={inputGeneralInfo}
+        profSummary={profSummary}
+        inputSummary={inputSummary}
+        workExp={workExp}
+        inputWorkExp={inputWorkExp}
+        education={education}
+        inputEducation={inputEducation}
+        addWorkExp={addWorkExp}
+        removeWorkExp={removeWorkExp}
+        addEducation={addEducation}
+        removeEducation={removeEducation}
+      />
+      <CVOutput
+        generalInfo={generalInfo}
+        profSummary={profSummary}
+        workExp={workExp}
+        education={education}
+      />
+      <Footer />
+    </div>
+  );
+};
 
 export default App;
